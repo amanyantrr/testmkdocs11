@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Use usbserial adapter</title>
+  
+
+  <link rel="shortcut icon" href="./img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="./css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "None";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/";
+  </script>
+  
+  <script src="./js/jquery-2.1.1.min.js"></script>
+  <script src="./js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="./js/highlight.pack.js"></script>
+  <script src="./js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> Use usbserial adapter</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href=".">Home</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#use-usbserial-adapter">Use usbserial adapter</a></li>
+                
+                    <li><a class="toctree-l4" href="#instructions">Instructions</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">Use usbserial adapter</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="use-usbserial-adapter">Use usbserial adapter</h1>
+<p>VIBE2 also provides a USB-UART serial connectivity for ssh.</p>
+<h2 id="instructions">Instructions</h2>
+<ul>
+<li>For ssh and console access to VIBE2 over UART port, use a 3.3V UART to USB adapter.</li>
+</ul>
+<p><img alt="VIBE2_jumper1" src="./img/VIBE2_jumper1.jpg" /></p>
+<ul>
+<li>
+<p>On VIBE2 there are two UART0 headers provided J1 (33) and P7(25).</p>
+</li>
+<li>
+<p>Each VIBE2 is provided with a USB-to-UART adapter and a 3 wire jumper cable. It has to be interfaced with VIBE2 in the following manner:</p>
+</li>
+</ul>
+<p>a. GND pin on adapter : Pin J1.1 (GND)</p>
+<p>b. TX pin on adapter : Pin J1.4 (RXD)</p>
+<p>c. RX Pin on adapter : Pin J1.5 (TXD)</p>
+<ul>
+<li>
+<p>Similar interface can be done with P7 UART0 header if J1 is inaccessible when a cape is mounted. P7 header has markings on the board.</p>
+</li>
+<li>
+<p>Connect the USB port of the adapter to a Host (like a PC).</p>
+</li>
+<li>
+<p>Open the serial/COM port on the Host in a serial port emulator like Putty with following parameters :</p>
+<pre><code>Baud rate : 115200, 8 data bits, No parity bit and 1 stop bit
+</code></pre>
+</li>
+<li>
+<p>For windows, check Device manager for COM port against PL2303 USB devices.</p>
+</li>
+<li>
+<p>In Linux, simple interface like /dev/ttyUSB0 should be available.</p>
+</li>
+</ul>
+<p>Please refer to the image provided below for connections.</p>
+<p><img alt="IMG_22411" src="./img/IMG_22411.JPG" /> </p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 0.15.3
+Build Date UTC : 2016-07-20 11:36:40.721906
+-->
